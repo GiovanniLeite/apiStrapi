@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+    pass_strap_api:
+        container_name: pass_strap_api
+        hostname: pass_strap_api
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: senha
+            POSTGRES_DB: pass-strapi
+            PGDATA: /var/lib/postgresql1/data/pgdata
+        volumes:
+            - ~/.PostgressData/postgresonly/pass_strapi_api:/var/lib/postgresql/data/pgdata
+        ports:
+            - 5432:5432
